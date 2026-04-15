@@ -1,9 +1,9 @@
 package dao.impl;
 
-import java.util.HashMap;
-import java.util.Map;
 import dao.FruitDao;
 import db.FruitStorage;
+import java.util.Map;
+import java.util.HashMap;
 
 public class FruitDaoImpl implements FruitDao {
     @Override
