@@ -1,7 +1,6 @@
 package strategy.impl;
 
 import dao.FruitDao;
-import db.FruitStorage;
 import exception.FruitStorageException;
 import model.FruitTransaction;
 import strategy.OperationHandler;
