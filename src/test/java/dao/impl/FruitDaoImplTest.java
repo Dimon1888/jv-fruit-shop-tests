@@ -1,7 +1,6 @@
 package dao.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import db.FruitStorage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
