@@ -2,6 +2,7 @@ package strategy.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import dao.impl.FruitDaoImpl;
 import db.FruitStorage;
 import exception.FruitStorageException;
