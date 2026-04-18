@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.FruitDao;
 import db.FruitStorage;
+import java.util.Map;
 import service.ReportGenerator;
 
 public class ReportGeneratorImpl implements ReportGenerator {
@@ -10,8 +11,13 @@ public class ReportGeneratorImpl implements ReportGenerator {
 
     @Override
     public String getReport() {
-        StringBuilder sb = new StringBuilder("fruit,quantity\n");
-        FruitStorage.fruits.forEach((f, q) -> sb.append(f).append(",").append(q).append("\n"));
-        return sb.toString().trim();
+        String header = "fruit,quantity";
+
+        String data = FruitStorage.fruits.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .map(entry -> entry.getKey() + "," + entry.getValue())
+                .collect(java.util.stream.Collectors.joining(System.lineSeparator()));
+
+        return data.isEmpty() ? header : header + System.lineSeparator() + data;
     }
 }
